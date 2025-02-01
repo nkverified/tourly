@@ -4,150 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Western Events - Coming Soon</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Container */
-        .event-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            overflow: hidden;
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Slideshow */
-        .slideshow {
-            position: relative;
-            width: 100%;
-        }
-
-        .slides {
-            display: none;
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* Slide animation */
-        .fade {
-            animation: fadeEffect 1.5s ease-in-out;
-        }
-
-        @keyframes fadeEffect {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        }
-
-        /* "Coming Soon" Text */
-        .coming-soon {
-            font-size: 24px;
-            font-weight: bold;
-            color: blue; /* Change to purple or black if needed */
-            margin: 15px 0;
-        }
-
-        /* Subscribe Button */
-        .subscribe-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: black;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        /* Navigation Dots */
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 5px;
-            background-color: gray;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .active {
-            background-color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- Event Container -->
-    <div class="event-container">
-        <!-- Slideshow -->
-        <div class="slideshow">
-            <img class="slides fade" src="https://via.placeholder.com/600x300/0000FF/FFFFFF?text=Event+1" alt="Event 1">
-            <img class="slides fade" src="https://via.placeholder.com/600x300/800080/FFFFFF?text=Event+2" alt="Event 2">
-            <img class="slides fade" src="https://via.placeholder.com/600x300/000000/FFFFFF?text=Event+3" alt="Event 3">
+    <div class="container">
+        <h1>Western Events</h1>
+        <h2>Coming Soon</h2>
+        <p>Something amazing is on the way...</p>
+        
+        <div id="countdown">
+            <div class="time-box"><span id="days"></span>Days</div>
+            <div class="time-box"><span id="hours"></span>Hours</div>
+            <div class="time-box"><span id="minutes"></span>Minutes</div>
+            <div class="time-box"><span id="seconds"></span>Seconds</div>
         </div>
-
-        <!-- Navigation Dots -->
-        <div class="dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-        <!-- "Coming Soon" Text -->
-        <p class="coming-soon">Western Events Coming Soon</p>
-
-        <!-- Subscribe Button -->
-        <a href="mailto:zaxxtourplanners@gmail.com" class="subscribe-button">Subscribe</a>
     </div>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            let dots = document.getElementsByClassName("dot");
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].classList.add("active");
-
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-
-        function currentSlide(n) {
-            slideIndex = n - 1;
-            showSlides();
-        }
-    </script>
+    <footer>
+        <p>©Western Events by Zaxx Tour Planners</p>
+        <a href="https://www.instagram.com/westernevents.co?igsh=Z3pnOGJ3eDgwZ3hj" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+    </footer>
 
 </body>
 </html>
+
+<style> 
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #ff00ff;
+    text-shadow: 0 0 20px #ff00ff;
+}
+
+h2 {
+    font-size: 35px;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+p {
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.time-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #0ff;
+    padding: 15px;
+    margin: 10px;
+    font-size: 24px;
+    text-shadow: 0 0 10px #0ff;
+    box-shadow: 0 0 15px #0ff;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+footer p {
+    font-size: 16px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+footer a img {
+    width: 30px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+footer a img:hover {
+    transform: scale(1.2);
+}
+
+</style>
+
+<script>
+
+function updateCountdown() {
+    const eventDate = new Date('February 20, 2025 00:00:00').getTime();
+    const now = new Date().getTime();
+    const timeLeft = eventDate - now;
+
+    if (timeLeft < 0) {
+        document.getElementById("countdown").innerHTML = "<h2>Event Started!</h2>";
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+</script>
