@@ -31,97 +31,135 @@
 
 <body id="top">
 
+<!-- Popup -->
+    <div id="popup">
+        <p>Select our services:</p>
+        <div>
+            <img src="image1.jpg" alt="Image 1" onclick="redirectTo('https://zaxx-tour-planners.netlify.app/')">
+            <img src="image2.jpg" alt="Image 2" onclick="redirectTo('https://zaxx-tour-planners.netlify.app/western-events.html')">
+        </div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+
+<style> 
+
+        body {
+            
+            color: #00ff99;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic popup styling */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #00ff99;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.8);
+            text-align: center;
+            border-radius: 10px;
+            animation: popupAnimation 0.3s ease-in-out;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        #popup p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #popup img {
+            width: 120px;
+            height: 120px;
+            margin: 15px;
+            cursor: pointer;
+            border: 2px solid #00ff99;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #popup img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ff99;
+        }
+
+        #popup button {
+            background-color: #00ff99;
+            color: #0d0d0d;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #popup button:hover {
+            background-color: #009966;
+        }
+
+        @keyframes popupAnimation {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -45%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+
+        /* Make images responsive */
+        @media (max-width: 600px) {
+            #popup img {
+                width: 80px;
+                height: 80px;
+            }
+
+            #popup p {
+                font-size: 18px;
+            }
+
+            #popup button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+    
 
 
 
-<!-- Popup Structure -->
-<div class="popup-overlay" id="popupOverlay"></div>
-<div class="popup-container" id="popupContainer">
-  <span class="close-popup" onclick="closePopup()">&times;</span>
-  <h1> LASTEST UPDATE </h1>
-
-<p class="popup-text">
-    We have also started our event management company. To learn more, click the button below:
-  </p>
-  <a href="https://zaxx-tour-planners.netlify.app/western-events.html" class="popup-button">Western Events</a>
-</div>
-<style>
-  /* Popup container */
-  .popup-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    z-index: 1000;
-    display: none; /* Initially hidden */
-  }
-
-  /* Overlay background */
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-  }
-
-  /* Popup text */
-  .popup-text {
-    font-size: 18px;
-    color: black; /* You can change to purple or black */
-    margin-bottom: 20px;
-  }
-
-  /* Button */
-  .popup-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  /* Close button */
-  .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    color: black;
-  }
 </style>
 
-<script>
-  // Function to show the popup
-  function showPopup() {
-    document.getElementById('popupOverlay').style.display = 'block';
-    document.getElementById('popupContainer').style.display = 'block';
-  }
 
-  // Function to close the popup
-  function closePopup() {
-    document.getElementById('popupOverlay').style.display = 'none';
-    document.getElementById('popupContainer').style.display = 'none';
-  }
 
-  // Show popup after 1 seconds
-  setTimeout(showPopup, 1000);
+<scipt>
+
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        // Open the popup after the page loads
+        window.onload = openPopup;
+    
 </script>
-
-</div>
+  
 
   <!-- 
     - #HEADER
