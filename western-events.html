@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Events - Coming Soon</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .event-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            width: 100%;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Slide animation */
+        .fade {
+            animation: fadeEffect 1.5s ease-in-out;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* "Coming Soon" Text */
+        .coming-soon {
+            font-size: 24px;
+            font-weight: bold;
+            color: blue; /* Change to purple or black if needed */
+            margin: 15px 0;
+        }
+
+        /* Subscribe Button */
+        .subscribe-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Navigation Dots */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Event Container -->
+    <div class="event-container">
+        <!-- Slideshow -->
+        <div class="slideshow">
+            <img class="slides fade" src="https://via.placeholder.com/600x300/0000FF/FFFFFF?text=Event+1" alt="Event 1">
+            <img class="slides fade" src="https://via.placeholder.com/600x300/800080/FFFFFF?text=Event+2" alt="Event 2">
+            <img class="slides fade" src="https://via.placeholder.com/600x300/000000/FFFFFF?text=Event+3" alt="Event 3">
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- "Coming Soon" Text -->
+        <p class="coming-soon">Western Events Coming Soon</p>
+
+        <!-- Subscribe Button -->
+        <a href="mailto:zaxxtourplanners@gmail.com" class="subscribe-button">Subscribe</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
+
+</body>
+</html>
