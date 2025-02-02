@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Events - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch">Western Events</h1>
+        <p class="subtitle">Something big is coming...</p>
+        <div id="countdown">
+            <div class="time"><span id="days"></span>Days</div>
+            <div class="time"><span id="hours"></span>Hours</div>
+            <div class="time"><span id="minutes"></span>Minutes</div>
+            <div class="time"><span id="seconds"></span>Seconds</div>
+        </div>
+        <p class="footer">©Western Events by Zaxx Tour Planners</p>
+        <a href="https://www.instagram.com/westernevents.co?igsh=Z3pnOGJ3eDgwZ3hj" target="_blank" class="instagram">Instagram</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style> 
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0a0a0a;
+    color: #00ffea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.glitch {
+    position: relative;
+    color: #00ffea;
+    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    100% { transform: translateX(2px); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+#countdown {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.time {
+    background: rgba(0, 255, 234, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00ffea;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.instagram {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    color: #0a0a0a;
+    background: #00ffea;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.instagram:hover {
+    background: #00c8b0;
+}
+
+
+</style>
+
+<script>
+
+// Set the countdown date
+const countdownDate = new Date("Feb 25, 2025 00:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = countdownDate - now;
+
+    if (timeLeft <= 0) {
+        document.getElementById("countdown").innerHTML = "<h2>We Are Live!</h2>";
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+
+// Update countdown every second
+setInterval(updateCountdown, 1000);
+
+// Initial call
+updateCountdown();
+
+</script>
