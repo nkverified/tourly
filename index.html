@@ -35,20 +35,22 @@
 <div id="popup" class="popup-container">
     <div class="popup-content">
         <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h2>Select an Option</h2>
+        <h2 class="cyberpunk-title">Select an Option</h2>
         
         <div class="logo-container">
-            <img src="assets/Picsart_25-02-01_15-44-21-255.jpg" alt="Logo1" class="logo" id="logo1">
-            <img src="assets/Picsart_25-02-01_15-43-42-701.jpg" alt="Logo2" class="logo" id="logo2">
+            <a href="https://zaxx-tour-planners.netlify.app/western-events.html" target="_blank">
+                <img src="assets/Picsart_25-02-01_15-43-42-701.jpg" alt="Logo 1" class="logo neon-glow">
+            </a>
+            <a href="https://zaxx-tour-planners.netlify.app/" target="_blank">
+                <img src="assets/Picsart_25-02-01_15-44-21-255.jpg" alt="Logo 2" class="logo neon-glow">
+            </a>
         </div>
-
-        <!-- Enter Button -->
-        <button class="enter-btn" onclick="redirectToSite()">Enter</button>
     </div>
 </div>
 
+<!-- Cyberpunk CSS Styles -->
 <style>
-    /* Popup Background */
+/* Cyberpunk Background */
 .popup-container {
     display: flex;
     justify-content: center;
@@ -58,19 +60,20 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Popup Box */
+/* Cyberpunk Popup Box */
 .popup-content {
-    background: white;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ffea;
     padding: 20px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px #00ffea;
     max-width: 90%;
     width: 400px;
     position: relative;
@@ -82,87 +85,52 @@
     top: 10px;
     right: 15px;
     font-size: 24px;
+    color: #ff007f;
     cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    color: #ff00ff;
+}
+
+/* Cyberpunk Title */
+.cyberpunk-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffea;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 8px #00ffea;
 }
 
 /* Logo Container */
 .logo-container {
-    display: flex;
-justify-content: center;
-    gap: 20px;
+    display:flex;
+    justify-content: center;
+    gap: 30px;
     margin: 20px 0;
 }
 
-.logo-container img {
-    width: 100px;
+/* Neon Glow Effect */
+.logo {
+    width: 120px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.logo-container img:hover {
+.logo:hover {
     transform: scale(1.1);
-}
-
-/* Enter Button */
-.enter-btn {
-background: #007bff;
-color: white;
-padding: 10px 20px;
-border: none;
-border-radius: 5px;
-font-size: 16px;
-cursor: pointer;
-transition: background 0.3s ease-in-out;
-margin-top: 20px;
-
-}
-
-
-.enter-btn:hover {
-    background: #0056b3;
+    box-shadow: 0px 0px 15px #ff007f;
 }
 
 /* Hide popup when closed */
 .hidden {
     visibility: hidden;
     opacity: 0;
-    }
-</style>
-
-<script> 
-// Variable to store the URL based on the clicked logo
-let selectedUrl = "";
-
-// Function to close the popup
-function closePopup() {
-    document.getElementById('popup').classList.add('hidden');
 }
-
-// Function to set the URL based on the selected logo
-document.getElementById("logo1").onclick = function() {
-    selectedUrl = "https://zaxx-tour-planners.netlify.app/";  // Change to your desired URL
-};
-
-document.getElementById("logo2").onclick = function() {
-    selectedUrl = "https://zaxx-tour-planners.netlify.app/western-events.html";  // Change to your desired URL
-};
-
-// Function to redirect when "Enter" button is clicked
-function redirectToSite() {
-    if (selectedUrl) {
-        window.location.href = selectedUrl;
-    } else {
-        alert("Please select a logo first.");
-    }
-}
-
-// Automatically show popup on page load
-window.onload = function() {
-    document.getElementById('popup').classList.remove('hidden');
-};
-</script>
-
+    </style>
 
 
 
