@@ -1,851 +1,496 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Joy trip - Bus booking app</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleção de lugares</title>
+ 
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="main">
-  <ul style="position: absolute; left: 0; top: 0;padding: 30px">
-    <li> <a style="text-decoration: none; padding: 15px;display: inline-block;background-color: #ea4c89; color: #ffffff;margin-bottom: 15px;" href="https://dribbble.com/Aravind_arWIN" class="button facebook" target="_blank">
-        <i class="fa fa-facebook"></i> Dribbble
-      </a></li>
-           <li> <a style="text-decoration: none; padding: 15px;display: inline-block;background-color: #3b5998; color: #ffffff;margin-bottom: 15px;" href="https://www.facebook.com/aravind.gva" class="button facebook" target="_blank">
-        <i class="fa fa-facebook"></i> Facebook
-      </a></li>
-           <li><a style="text-decoration: none; padding: 15px;display: inline-block;background: #d6249f; background: radial-gradient(circle at 150% 150%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #ffffff;margin-bottom: 15px;" href="https://www.instagram.com/arvin_swaaag/?hl=en" class="button github" target="_blank">
-        <i class="fa fa-github"></i> Instagram
-      </a></li>
-           <li><a style="text-decoration: none; padding: 15px;display: inline-block;background-color: #008abe; color: #ffffff;margin-bottom: 15px;" href="https://twitter.com/Aravind_arWIN" class="button twitter" target="_blank">
-        <i class="fa fa-twitter"></i> Twitter
-      </a></li>
-  </ul>
-	<main class="app">
-		<div class="screen-wrap">
-			<section class="screen-home">
-				<div class="screen-home__form-wrap">
-					<div class="screen-home__form">
-						<form>
-							<div id="formdetail">
-								<div class="screen-home__location">
-									<div class="lable">
-										<figure class="icon"><img src="https://i.ibb.co/KwnYdXN/location.png"></figure>
-										<span class="text">Location Details</span>
-									</div>
-									<div class="input-wrap">
-										<div class="inside-wrap">
-											<div class="rotate-btn">
-												<figure>
-													<img src="https://i.ibb.co/HPBrQkn/rotate-btn.png">
-												</figure>
-											</div>
-											<div class="from">
-												<span class="inside-lable">From</span>
-												<input class="input" type="" name="" value="Bangalore">
-											</div>
-											<div class="to">
-												<span class="inside-lable">To</span>
-												<input class="input" type="" name="" value="Chennai">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="screen-home__date">
-									<div class="lable">
-										<figure class="icon"><img src="https://i.ibb.co/7N5zdnc/calendar.png"></figure>
-										<span class="text">Date Details</span>
-									</div>
-									<div class="input-wrap">
-										<div class="inside-wrap">
-											<div class="onward">
-												<input class="input" type="" name="" value="10">
-												<div class="mon-day">
-													<span class="month">Dec</span>
-													<span class="day">Wed</span>
-												</div>
-											</div>
-											<div class="return">
-												<input class="input" type="" name="" value="12">
-												<div class="mon-day">
-													<span class="month">Dec</span>
-													<span class="day">Fri</span>
-												</div>
-											</div>
-										</div>
-										<div class="inside-lable-wrap">
-											<div class="inside-lable-col">
-												<span class="inside-lable">Onward</span>
-											</div>
-											<div class="inside-lable-col">
-												<span class="inside-lable">Return</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="screen-home__submit-wrap">
-								<span class="line"></span>
-								<div class="screen-home__bus-page" id="buspage">
-									<div class="screen-home__inside-wave">
-										
-									</div>
-									<figure class="screen-home__bus-arrow-wrap">
-<!--                     <span class="screen-home__btn-blink"></span> -->
-										<img src="https://i.ibb.co/nQ4khG8/arrow.png">
-									</figure>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="screen-home__recent-search">
-						<div class="lable">
-							<figure class="icon"><img src="https://i.ibb.co/dM8cwj6/recent-search.png"></figure>
-							<span class="text">Recent search</span>
-						</div>
-						<div class="screen-home__rs-wrap">
-							<ul class="screen-home__rs-row">
-								<li class="screen-home__rs-col">
-									<div class="screen-homers-from-to">
-										<span>Chennai</span>
-										<span class="screen-home__rs-arrow"></span>
-										<span>Bangalore</span>
-									</div>
-									<div class="screen-home__rs-date">05 / 12 / 2019</div>
-								</li>
-								<li class="screen-home__rs-col">
-									<div class="screen-homers-from-to">
-										<span>Chennai</span>
-										<span class="screen-home__rs-arrow"></span>
-										<span>Bangalore</span>
-									</div>
-									<div class="screen-home__rs-date">05 / 12 / 2019</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="screen-bus">
-				<div class="screen-bus__location-filter-wrap">
-					<div class="screen-bus__location-filter-row">
-						<div class="screen-bus__location">
-							<div class="screen-bus__location-row">
-								<span class="screen-bus__location-col">Bangalore</span>
-								<span class="screen-home__rs-arrow"></span>
-								<span class="screen-bus__location-col">Chennai</span>
-							</div>
-							<div class="screen-bus__date-row">
-								<span>Wed, 10/ 12/ 2019</span> - <span>Fri, 12/ 12/ 2019</span>
-							</div>
-						</div>
-						<div class="screen-bus__filter">
-							<figure>
-								<img src="https://i.ibb.co/ZJt9tkM/filter.png">
-							</figure>
-						</div>
-					</div>
-				</div>
-				<div class="screen-bus__travels-wrap">
-					<div class="screen-bus__travels-row">
-						<div class="screen-bus__travels-col">
-							<div class="screen-bus__name-time-seat">
-								<div class="screen-bus__name-wrap">
-									<span class="screen-bus__name">KPN Travels</span>
-									<span class="screen-bus__type">Non A/C</span>
-								</div>
-								<div class="screen-bus__time-wrap">
-									<div class="screen-bus__time">
-										<div class="screen-bus__start">13:40</div>
-										<div class="screen-bus__time-arrow-wrap">
-											<span class="screen-bus__time-arrow"></span>
-										</div>
-										<div class="screen-bus__end">15:40</div>
-									</div>
-									<div class="screen-bus__hrs">
-										<span>2 hrs</span>
-									</div>
-								</div>
-								<div class="screen-bus__seat-wrap">
-									<div>
-										<span class="screen-bus__count">26</span>
-										Seats Available
-									</div>
-								</div>
-							</div>
-							<div class="screen-bus__rating-price">
-								<div class="screen-bus__rating-price-row">
-									<div class="screen-bus__rating">
-										<ul class="screen-bus__rating-row">
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-										</ul>
-									</div>
-									<div class="screen-bus__price">
-										<span><span>&#8377;</span> 1220</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="screen-bus__travels-col">
-							<div class="screen-bus__name-time-seat">
-								<div class="screen-bus__name-wrap">
-									<span class="screen-bus__name">SRS Travels</span>
-									<span class="screen-bus__type">A/C Sleeper</span>
-								</div>
-								<div class="screen-bus__time-wrap">
-									<div class="screen-bus__time">
-										<div class="screen-bus__start">12:00</div>
-										<div class="screen-bus__time-arrow-wrap">
-											<span class="screen-bus__time-arrow"></span>
-										</div>
-										<div class="screen-bus__end">15:00</div>
-									</div>
-									<div class="screen-bus__hrs">
-										<span>3 hrs</span>
-									</div>
-								</div>
-								<div class="screen-bus__seat-wrap">
-									<div>
-										<span class="screen-bus__count">13</span>
-										Seats Available
-									</div>
-								</div>
-							</div>
-							<div class="screen-bus__rating-price">
-								<div class="screen-bus__rating-price-row">
-									<div class="screen-bus__rating">
-										<ul class="screen-bus__rating-row">
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-										</ul>
-									</div>
-									<div class="screen-bus__price">
-										<span><span>&#8377;</span> 800</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="screen-bus__travels-col">
-							<div class="screen-bus__name-time-seat">
-								<div class="screen-bus__name-wrap">
-									<span class="screen-bus__name">Royal Travels</span>
-									<span class="screen-bus__type">A/C Sleeper</span>
-								</div>
-								<div class="screen-bus__time-wrap">
-									<div class="screen-bus__time">
-										<div class="screen-bus__start">22:00</div>
-										<div class="screen-bus__time-arrow-wrap">
-											<span class="screen-bus__time-arrow"></span>
-										</div>
-										<div class="screen-bus__end">1:00</div>
-									</div>
-									<div class="screen-bus__hrs">
-										<span>3 hrs</span>
-									</div>
-								</div>
-								<div class="screen-bus__seat-wrap">
-									<div>
-										<span class="screen-bus__count">20</span>
-										Seats Available
-									</div>
-								</div>
-							</div>
-							<div class="screen-bus__rating-price">
-								<div class="screen-bus__rating-price-row">
-									<div class="screen-bus__rating">
-										<ul class="screen-bus__rating-row">
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-										</ul>
-									</div>
-									<div class="screen-bus__price">
-										<span><span>&#8377;</span> 840</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="screen-bus__travels-col">
-							<div class="screen-bus__name-time-seat">
-								<div class="screen-bus__name-wrap">
-									<span class="screen-bus__name">MRN Travels</span>
-									<span class="screen-bus__type">Non A/C</span>
-								</div>
-								<div class="screen-bus__time-wrap">
-									<div class="screen-bus__time">
-										<div class="screen-bus__start">16:45</div>
-										<div class="screen-bus__time-arrow-wrap">
-											<span class="screen-bus__time-arrow"></span>
-										</div>
-										<div class="screen-bus__end">18:45</div>
-									</div>
-									<div class="screen-bus__hrs">
-										<span>4 hrs</span>
-									</div>
-								</div>
-								<div class="screen-bus__seat-wrap">
-									<div>
-										<span class="screen-bus__count">19</span>
-										Seats Available
-									</div>
-								</div>
-							</div>
-							<div class="screen-bus__rating-price">
-								<div class="screen-bus__rating-price-row">
-									<div class="screen-bus__rating">
-										<ul class="screen-bus__rating-row">
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-										</ul>
-									</div>
-									<div class="screen-bus__price">
-										<span><span>&#8377;</span> 550</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="screen-bus__travels-col">
-							<div class="screen-bus__name-time-seat">
-								<div class="screen-bus__name-wrap">
-									<span class="screen-bus__name">Indian Travels</span>
-									<span class="screen-bus__type">A/C Sleeper</span>
-								</div>
-								<div class="screen-bus__time-wrap">
-									<div class="screen-bus__time">
-										<div class="screen-bus__start">10:40</div>
-										<div class="screen-bus__time-arrow-wrap">
-											<span class="screen-bus__time-arrow"></span>
-										</div>
-										<div class="screen-bus__end">15:40</div>
-									</div>
-									<div class="screen-bus__hrs">
-										<span>5 hrs</span>
-									</div>
-								</div>
-								<div class="screen-bus__seat-wrap">
-									<div>
-										<span class="screen-bus__count">13</span>
-										Seats Available
-									</div>
-								</div>
-							</div>
-							<div class="screen-bus__rating-price">
-								<div class="screen-bus__rating-price-row">
-									<div class="screen-bus__rating">
-										<ul class="screen-bus__rating-row">
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/pxtdTrM/star.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-											<li><figure><img src="https://i.ibb.co/WPLcC1D/star-grey.png"></figure></li>
-										</ul>
-									</div>
-									<div class="screen-bus__price">
-										<span><span>&#8377;</span> 300</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-		<section class="screen-bottom">
-			<div>
-				<ul>
-					<li>
-						<figure>
-							<img src="https://i.ibb.co/n1kQzHj/home.png">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<img src="https://i.ibb.co/sjXwWkz/tickets.png">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<img src="https://i.ibb.co/5nFHJvJ/user.png">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<img src="https://i.ibb.co/qpb5dSj/support.png">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<img src="https://i.ibb.co/wNkTfWb/settings.png">
-						</figure>
-					</li>
-				</ul>
-			</div>
-		</section>
-	</main>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+    <style>
+    *, *:before, *:after {
+  box-sizing: border-box;
+}
 
-</body>
-</html>
+html {
+  font-size: 16px;
+}
 
-<style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300);
+.plane {
+  margin: 20px auto;
+  max-width: 300px;
+}
 
-html, body {
-  margin: 0;
+.exit {
+  position: relative;
+  height: 50px;
+}
+.exit:before, .exit:after {
+  content: "EXIT";
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 2px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  display: block;
+  position: absolute;
+  background: green;
+  color: white;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.exit:before {
+  left: 0;
+}
+.exit:after {
+  right: 0;
+}
+
+.fuselage {
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+}
+
+ol {
+  list-style: none;
   padding: 0;
-  font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial';
+  margin: 0;
 }
-ul {
-	padding: 0;
-	margin: 0;
-}
-li {
-	list-style: none;
-}
-figure {
-	margin: 0;
-}
-body {
-  height: 100vh;
+
+.seats {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
-.main {
-	width: 100%;
-  height: 100vh;
+
+.seat {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #66a1f3;	
+  flex: 0 0 14.28571428571429%;
+  padding: 5px;
+  position: relative;
 }
-.app {
-	width: 375px;
-	height: 667px;
-	border: 1px solid #efefef;
-	position: relative;
-  background-color: white;
-  border-radius: 10px;
+.seat:nth-child(3) {
+  margin-right: 14.28571428571429%;
+}
+.seat input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.seat input[type=checkbox]:checked + label {
+  background: #bada55;
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.seat input[type=checkbox]:disabled + label {
+  background: #dddddd;
+  text-indent: -9999px;
   overflow: hidden;
 }
-
-/* ========== Home ========== */
-.screen-home__location,
-.screen-home__date {
-	margin-bottom: 30px;
-}
-.screen-home {
-  width: 100%;
+.seat input[type=checkbox]:disabled + label:after {
+  content: "X";
+  text-indent: 0;
   position: absolute;
-  z-index: 1;
+  top: 4px;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
-.screen-home__form-wrap {
-  padding: 0 1rem;
+.seat input[type=checkbox]:disabled + label:hover {
+  box-shadow: none;
+  cursor: not-allowed;
 }
-.screen-home__form {
-	padding: 40px 0 0 0;
-}
-.screen-home__location .lable {
-	display: flex;
-  align-items: center;
-}
-.lable {
-	display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.lable .icon {
-	margin: 0 10px 0 0;
-}
-.lable .text {
-	font-family: roboto;
-}
-.inside-wrap {
-	background-color: #66A1F3;
-  /*padding: 10px 0px;*/
+.seat label {
+  display: block;
   position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: #F42536;
   border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
 }
-.inside-lable {
-  font-size: 0.7rem;
-  padding: 0px 0 5px 0;
-  display: inline-block;
-}
-.input {
-	width: 100%;
-  border: 0;
-  padding: 8px 0;
-  font-size: 1.4rem;
-  background: none;
-  outline: none;
-  color: #ffffff;
-}
- .from {
- 	border-bottom: 2px solid #ffffff;
- }
-.from, .to {
-	padding: 8px 15px;
-}
-.rotate-btn {
-  position: absolute;
-  right: 20px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.rotate-btn figure {
-	margin: 0;
-  width: 40px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #66a1f3;
-}
-.screen-home__date .inside-wrap {
-	display: flex;
-	padding: 4px 15px;
-}
-.onward {
-  width: 50%;
-	position: relative;
-}
-.return {
-  width: calc(50% - 15px);
-  padding-left: 15px;
-}
-.onward:before {
-	content: '';
-  position: absolute;
-  width: 1px;
-  height: 35px;
-  background-color: #ffffff;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-.onward,
-.return {
-  display: flex;
-}
-.onward .input,
-.return .input {
-  width: 37px;
-}
-.mon-day {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  padding-left: 13px;
-  color: #ffffff;
-}
-.mon-day:before {
+.seat label:before {
   content: "";
   position: absolute;
-  left: 0;
-  width: 1px;
-  height: 20px;
-  background-color: #ffffff;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-}
-.month {
-  padding-top: 4px;
-}
-.day {
-  padding-bottom: 4px;
-}
-.inside-lable-wrap {
-	display: flex;
-}
-.inside-lable-wrap .inside-lable-col {
-	width: 50%;
-}
-.screen-bottom {
-	position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px 0;
-}
-.screen-bottom ul {
-	display: flex;
-	justify-content: space-between;
-	padding: 0 15px;
-}
-.screen-home__submit-wrap .screen-home__bus-page {
-	background-color: #66a1f3;
-  width: 46px;
-  height: 46px;
-  position: relative;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  padding: 0;
-  border: 3px solid #ffffff;
-}
-.screen-home__submit-wrap .screen-home__bus-page figure {
-	height: 26px;
-  cursor: pointer;
-}
-.screen-home__submit-wrap {
-	display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.line {
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	background-color: #66a1f3;
-	z-index: -1;
-}
-
-
-.screen-home__recent-search {
-  margin-top: 20px;
-}
-.screen-home__rs-col {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border: 1px solid #c7deff;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
-.screen-homers-from-to {
-  display: flex;
-  align-items: center;
-}
-.screen-home__rs-arrow {
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  background-color: #000000;
-  margin: 0 10px;
-  position: relative;
-}
-.screen-home__rs-arrow:before,
-.screen-home__rs-arrow:after {
-  content: "";
-  width: 6px;
-  height: 1px;
-  background-color: #000000;
-  position: absolute;
-  right: 0;
-}
-.screen-home__rs-arrow:before {
-  transform: rotate(45deg);
-  top: -2px;
-}
-.screen-home__rs-arrow:after {
-  transform: rotate(-45deg);
-  top: 2px;
-}
-
-
-/* ========== Bus ========== */
-.screen-bus {
-  opacity: 0;
-}
-.screen-bus__location-filter-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #66A1F3;
-}
-.screen-bus__location {
-  padding: 1.3rem 15px;
-  color: #ffffff;
-}
-.screen-bus__filter {
-  padding-right: 1rem;
-}
-.screen-bus__location-row {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-}
-.screen-bus__date-row {
-  font-size: 0.7rem;
-}
-.screen-bus__center-arrow{
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background-color: #ffffff;
-  border-radius: 100px;
-  margin: 0 1.2rem;
-}
-.screen-bus__travels-wrap {
-  padding: 1rem 1rem 0 1rem;
-}
-.screen-bus__travels-col {
-  box-shadow: 0px 1px 4px rgba(170, 170, 170, 0.25);
+  width: 75%;
+  height: 75%;
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 3px;
-  padding: 12px;
-  border: 1px solid whitesmoke;
-  margin-bottom: 1rem;
-  opacity: 0;
-  transform: translateY(5px);
 }
-.screen-bus__name-time-seat {
-  display: flex;
-  justify-content: space-between;
-}
-.screen-bus__name-wrap,
-.screen-bus__time-wrap,
-.screen-bus__seat-wrap {
-  width: 33.333%;
-}
-.screen-bus__name-wrap {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.7rem;
-}
-.screen-bus__name {
-  margin-bottom: 0.3rem;
-}
-.screen-bus__type,
-.screen-bus__hrs span {
-  font-size: 0.6rem;
-  color: #cacaca;
-}
-.screen-bus__seat-wrap {
-  text-align: right;
-  font-size: 0.7rem;
-}
-.screen-bus__count {
-  font-size: 0.9rem;
-  color: #81e276;
-}
-.screen-bus__time-wrap {
-  font-size: 0.7rem;
-  display: flex;
-  flex-direction: column;
-}
-.screen-bus__time {
-  display: flex;
-  margin-bottom: 0.3rem;
-}
-.screen-bus__time-arrow-wrap {
-  margin: 0 0.7rem;
-}
-.screen-bus__time-arrow {
-  display: inline-block;
-  width: 15px;
-  height: 1px;
-  background-color: red;
-  position: relative;
-}
-.screen-bus__time-arrow:after,
-.screen-bus__time-arrow:before {
-  content: "";
-  width: 5px;
-  height: 1px;
-  background-color: red;
-  position: absolute;
-  right: 0;
-}
-.screen-bus__time-arrow:after {
-  transform: rotate(-45deg);
-  top: 2px;
-}
-.screen-bus__time-arrow:before {
-  transform: rotate(45deg);
-  top: -2px;
-}
-.screen-bus__rating-price-row {
-  display: flex;
-  justify-content: space-between;
-}
-.screen-bus__rating-price {
-  margin-top: 0.5rem;
-}
-.screen-bus__rating-row {
-  display: flex;
-}
-.screen-bus__rating-row li {
-  margin-right: 5px;
-}
-.screen-bus__rating-row li:last-child {
-  margin-right: 0;
-}
-.screen-home__inside-wave {
-  width: 0%;
-  height: 0%;
-  position: absolute;
-  border-radius: 100px;
-  background-color: #ffffff7d;
+.seat label:hover {
   cursor: pointer;
+  box-shadow: 0 0 0px 2px #5C6AFF;
 }
 
-</style>
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
 
-<script>
+    </style>
+</head>
+<body>
 
-$(document).ready(function(){
- $('#buspage').click(function(){
-		var Tl = new TimelineMax()
-		var nextbutton = $('.screen-home__bus-page')
-		var screenBottom = $('.screen-bottom');
-				Tl
-					// .fromTo('.screen-home__bus-page', '0.3', {scale: 1, ease:Expo.easeInOut}, {scale: 1.2, ease: Expo.easeInOut }, '0.6')
-					// .to('.screen-home__bus-page', '0.3', {scale: 1, ease:Expo.easeInOut, onComplete: clkAnimComplete})
-					.to('.screen-home__inside-wave', '0.3', {width: 52, height: 52 })
-					.to('.screen-home__inside-wave', '0.3', {opacity: 0, onComplete: clkAnimComplete})
-					function clkAnimComplete() {
-						// .to('.screen-home__inside-wave', '0.3', {width: 100, height: 100 })
-						Tl.to('#formdetail', 0.1, {scale: 0.9, y: 5, opacity:0, ease: Power2.easeIn})
-						Tl.to('.screen-home__recent-search', 0.1, {scale: 0.9, y: 5, opacity:0, ease: Power2.easeIn}, '0')
-						Tl.to('.screen-bottom', 0.1, {opacity: 0}, '0')
-						Tl.to(nextbutton, 1, {rotation: 720, scale: 0.4, borderWidth: 0, ease: Expo.easeOut})
-						Tl.to('.screen-home__bus-arrow-wrap', 1, {scale: 0, opacity: 0, ease: Expo.easeOut}, '0')
-						Tl.to('.line', 0.6, {width: 0}, '0.6')
-						Tl.to('.screen-home__submit-wrap', 0.6, {width: 375, height: 90, x: -15, y: -409, ease: Expo.easeOut })
-						Tl.to(nextbutton, 0.6, {scale: 1, width: 375, height: 90, borderRadius: 0, ease: Expo.easeOut, onStart: visibleBox})
-						Tl.to(screenBottom, 0.1, {opacity: 1})
-						Tl.to('.screen-bus', 0, {opacity:1})
-						Tl.to('.screen-home', 0.6, {opacity: 0})
-						Tl.to('.screen-home', 0, {display: 'none'})
-						function visibleBox() {
-							Tl.staggerTo('.screen-bus__travels-col', 0.4, {opacity: 1, y: 0, ease: Expo.easeIn}, '0.1'); 
-							console.log('start');
-						} 
-					}
-	 });
-  
-var TlWaveAnim = new TimelineMax({repeat: -1});
-    TlWaveAnim
-              .to('.screen-home__inside-wave', 0.8, {width: '100%', height: '100%'});
-});
 
-</script>
+
+    <div class="plane">
+        <h1>Selecionar lugar</h1>
+      <div class="fuselage">
+        
+      </div>
+      <ol class="cabin fuselage">
+        <li class="row row--1">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="1A" />
+              <label for="1A">1A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="1B" />
+              <label for="1B">1B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="1C" />
+              <label for="1C">1C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" disabled id="1D" />
+              <label for="1D">Occupied</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="1E" />
+              <label for="1E">1E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="1F" />
+              <label for="1F">1F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--2">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="2A" />
+              <label for="2A">2A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="2B" />
+              <label for="2B">2B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="2C" />
+              <label for="2C">2C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="2D" />
+              <label for="2D">2D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="2E" />
+              <label for="2E">2E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="2F" />
+              <label for="2F">2F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--3">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="3A" />
+              <label for="3A">3A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="3B" />
+              <label for="3B">3B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="3C" />
+              <label for="3C">3C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="3D" />
+              <label for="3D">3D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="3E" />
+              <label for="3E">3E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="3F" />
+              <label for="3F">3F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--4">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="4A" />
+              <label for="4A">4A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="4B" />
+              <label for="4B">4B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="4C" />
+              <label for="4C">4C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="4D" />
+              <label for="4D">4D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="4E" />
+              <label for="4E">4E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="4F" />
+              <label for="4F">4F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--5">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="5A" />
+              <label for="5A">5A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="5B" />
+              <label for="5B">5B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="5C" />
+              <label for="5C">5C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="5D" />
+              <label for="5D">5D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="5E" />
+              <label for="5E">5E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="5F" />
+              <label for="5F">5F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--6">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="6A" />
+              <label for="6A">6A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="6B" />
+              <label for="6B">6B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="6C" />
+              <label for="6C">6C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="6D" />
+              <label for="6D">6D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="6E" />
+              <label for="6E">6E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="6F" />
+              <label for="6F">6F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--7">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="7A" />
+              <label for="7A">7A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="7B" />
+              <label for="7B">7B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="7C" />
+              <label for="7C">7C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="7D" />
+              <label for="7D">7D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="7E" />
+              <label for="7E">7E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="7F" />
+              <label for="7F">7F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--8">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="8A" />
+              <label for="8A">8A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="8B" />
+              <label for="8B">8B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="8C" />
+              <label for="8C">8C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="8D" />
+              <label for="8D">8D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="8E" />
+              <label for="8E">8E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="8F" />
+              <label for="8F">8F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--9">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="9A" />
+              <label for="9A">9A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="9B" />
+              <label for="9B">9B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="9C" />
+              <label for="9C">9C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="9D" />
+              <label for="9D">9D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="9E" />
+              <label for="9E">9E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="9F" />
+              <label for="9F">9F</label>
+            </li>
+          </ol>
+        </li>
+        <li class="row row--10">
+          <ol class="seats" type="A">
+            <li class="seat">
+              <input type="checkbox" id="10A" />
+              <label for="10A">10A</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="10B" />
+              <label for="10B">10B</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="10C" />
+              <label for="10C">10C</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="10D" />
+              <label for="10D">10D</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="10E" />
+              <label for="10E">10E</label>
+            </li>
+            <li class="seat">
+              <input type="checkbox" id="10F" />
+              <label for="10F">10F</label>
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <div class="fuselage">
+        
+      </div>
+    </div>
+  </body>
+
+  </html>
