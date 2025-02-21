@@ -1,182 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Booking - Zaxxx Tour Planners</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking - Zaxxx Tour Planners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-        body {
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align card to the top */
-            min-height: 100vh;
-            padding: 20px;
-        }
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align card to the top */
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-        .bus-card {
-            width: 100%;
-            max-width: 400px; /* Smaller width for compact design */
-            background: #0077b6; /* Blue theme */
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            aspect-ratio: 18/6; /* Ratio 18:6 */
-            position: relative;
-            text-decoration: none;
-            color: white; /* White text for contrast */
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            transition: transform 0.3s;
-        }
+        .bus-card {
+            width: 100%;
+            max-width: 400px; /* Smaller width for compact design */
+            background: #0077b6; /* Blue theme */
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            aspect-ratio: 18/6; /* Ratio 18:6 */
+            position: relative;
+            text-decoration: none;
+            color: white; /* White text for contrast */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
 
-        .bus-card:hover {
-            transform: translateY(-5px);
-        }
+        .bus-card:hover {
+            transform: translateY(-5px);
+        }
 
-        .bus-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .bus-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-        .bus-logo {
-            width: 40px;
-            height: 40px;
-            background: #eee;
-            border-radius: 8px;
-        }
+        .bus-logo {
+            width: 40px;
+            height: 40px;
+            background: #eee;
+            border-radius: 8px;
+        }
 
-        .bus-info {
-            flex-grow: 1;
-        }
+        .bus-info {
+            flex-grow: 1;
+        }
 
-        .bus-info h2 {
-            font-size: 1.2em;
-            margin: 0;
-        }
+        .bus-info h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
 
-        .bus-info p {
-            font-size: 0.9em;
-            margin: 0;
-        }
+        .bus-info p {
+            font-size: 0.9em;
+            margin: 0;
+        }
 
-        .route-info {
-            margin: 10px 0;
-            display: flex;
-            justify-content: space-between;
-        }
+        .route-info {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
 
-        .route-info h3 {
-            font-size: 1em;
-            margin: 0;
-        }
+        .route-info h3 {
+            font-size: 1em;
+            margin: 0;
+        }
 
-        .route-info p {
-            font-size: 0.8em;
-            margin: 0;
-        }
+        .route-info p {
+            font-size: 0.8em;
+            margin: 0;
+        }
 
-        .details {
-            display: flex;
-            gap: 10px;
-            margin: 10px 0;
-            font-size: 0.8em;
-        }
+        .details {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 0.8em;
+        }
 
-        .book-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+        .book-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
 
-        .price {
-            font-size: 1.2em;
-            color: white;
-            margin: 5px 0;
-        }
+        .price {
+            font-size: 1.2em;
+            color: white;
+            margin: 5px 0;
+        }
 
-        .book-now {
-            background: white;
-            color: #0077b6;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
+        .book-now {
+            background: white;
+            color: #0077b6;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
 
-        .book-now:hover {
-            background: #f0f0f0;
-        }
+        .book-now:hover {
+            background: #f0f0f0;
+        }
 
-        @media (max-width: 768px) {
-            .bus-card {
-                grid-template-columns: 1fr;
-                aspect-ratio: unset;
-            }
-        }
-    </style>
+        @media (max-width: 768px) {
+            .bus-card {
+                grid-template-columns: 1fr;
+                aspect-ratio: unset;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <a href="booking.html" class="bus-card">
-            <div class="left-section">
-                <div class="bus-header">
-                    <img src="bus-logo.png" alt="Bus Logo" class="bus-logo">
-                    <div class="bus-info">
-                        <h2>Zaxxx Luxury Line</h2>
-                        <p><i class="fas fa-bus"></i> Bus No: ZX-2024</p>
-                    </div>
-                </div>
-                <div class="route-info">
-                    <div>
-                        <h3><i class="fas fa-map-marker-alt"></i> New York</h3>
-                        <p>08:00 AM</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-map-marker-alt"></i> Boston</h3>
-                        <p>12:00 PM</p>
-                    </div>
-                </div>
-                <div class="details">
-                    <span><i class="fas fa-snowflake"></i> A/C</span>
-                    <span><i class="fas fa-star"></i> 4.8/5</span>
-                    <span><i class="fas fa-chair"></i> 47 Seats</span>
-                </div>
-            </div>
-            <div class="book-section">
-                <div class="price">₹799</div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </a>
-    </div>
+    <div class="container">
+        <a href="booking.html" class="bus-card">
+            <div class="left-section">
+                <div class="bus-header">
+                    <img src="bus-logo.png" alt="Bus Logo" class="bus-logo">
+                    <div class="bus-info">
+                        <h2>Zaxxx Luxury Line</h2>
+                        <p><i class="fas fa-bus"></i> Bus No: ZX-2024</p>
+                    </div>
+                </div>
+                <div class="route-info">
+                    <div>
+                        <h3><i class="fas fa-map-marker-alt"></i> New York</h3>
+                        <p>08:00 AM</p>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-map-marker-alt"></i> Boston</h3>
+                        <p>12:00 PM</p>
+                    </div>
+                </div>
+                <div class="details">
+                    <span><i class="fas fa-snowflake"></i> A/C</span>
+                    <span><i class="fas fa-star"></i> 4.8/5</span>
+                    <span><i class="fas fa-chair"></i> 47 Seats</span>
+                </div>
+            </div>
+            <div class="book-section">
+                <div class="price">₹799</div>
+                <button class="book-now">Book Now</button>
+            </div>
+        </a>
+    </div>
 </body>
 </html>
-
 <style>
 .bus-card {
-    background: white;
-    color: #333; /* Dark text for contrast */
+    background: white;
+    color: #333; /* Dark text for contrast */
 }
 
 .price {
-    color: #0077b6; /* Blue price text */
+    color: #0077b6; /* Blue price text */
 }
 
 .book-now {
-    background: #0077b6;
-    color: white;
+    background: #0077b6;
+    color: white;
 }
-
 </style>
