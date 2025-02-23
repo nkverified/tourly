@@ -9,45 +9,84 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
 </head>
 <body>
-  <div class="search-container">
-    <h1>Bus Search</h1>
-    <form id="bus-search-form">
-      <div class="form-group">
-        <label for="from-location">From:</label>
-        <select id="from-location" name="from-location" required>
-          <option value="">Select Location</option>
-          <option value="vyttila">Vyttila</option>
-          <option value="kalamassery">Kalamassery</option>
-          <option value="aluva">Aluva</option>
-          <option value="angamaly">Angamaly</option>
-          <option value="chalakudy">Chalakudy</option>
-          <option value="vadakkencherry">Vadakkencherry</option>
-          <option value="malampuzha">Malampuzha</option>
-          <option value="coimbatore">Coimbatore</option>
-          <option value="thanjavur">Thanjavur</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="to-location">To:</label>
-        <select id="to-location" name="to-location" required>
-          <option value="">Select Location</option>
-          <option value="vyttila">Vyttila</option>
-          <option value="kalamassery">Kalamassery</option>
-          <option value="aluva">Aluva</option>
-          <option value="angamaly">Angamaly</option>
-          <option value="chalakudy">Chalakudy</option>
-          <option value="vadakkencherry">Vadakkencherry</option>
-          <option value="malampuzha">Malampuzha</option>
-          <option value="coimbatore">Coimbatore</option>
-          <option value="thanjavur">Thanjavur</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="date-picker">Date:</label>
-        <input type="text" id="date-picker" placeholder="Select Date" required>
-      </div>
-      <button type="submit" class="search-button">Search Bus</button>
-    </form>
+  <div class="container">
+    <!-- Table at the top -->
+    <table class="bus-table">
+      <thead>
+        <tr>
+          <th><i class="fas fa-bus"></i> Bus Name</th>
+          <th><i class="fas fa-map-marker-alt"></i> From</th>
+          <th><i class="fas fa-map-marker-alt"></i> To</th>
+          <th><i class="fas fa-calendar-alt"></i> Date</th>
+          <th><i class="fas fa-clock"></i> Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>KSRTC Swift</td>
+          <td>Vyttila</td>
+          <td>Aluva</td>
+          <td>2025-02-25</td>
+          <td>10:00 AM</td>
+        </tr>
+        <tr>
+          <td>Orange Travels</td>
+          <td>Kalamassery</td>
+          <td>Coimbatore</td>
+          <td>2025-02-26</td>
+          <td>02:30 PM</td>
+        </tr>
+        <tr>
+          <td>Green Line</td>
+          <td>Aluva</td>
+          <td>Thanjavur</td>
+          <td>2025-02-27</td>
+          <td>08:00 AM</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Bus Search Form -->
+    <div class="search-container">
+      <h1><i class="fas fa-bus"></i> Bus Search</h1>
+      <form id="bus-search-form">
+        <div class="form-group">
+          <label for="from-location"><i class="fas fa-map-marker-alt"></i> From:</label>
+          <select id="from-location" name="from-location" required>
+            <option value="">Select Location</option>
+            <option value="vyttila">Vyttila</option>
+            <option value="kalamassery">Kalamassery</option>
+            <option value="aluva">Aluva</option>
+            <option value="angamaly">Angamaly</option>
+            <option value="chalakudy">Chalakudy</option>
+            <option value="vadakkencherry">Vadakkencherry</option>
+            <option value="malampuzha">Malampuzha</option>
+            <option value="coimbatore">Coimbatore</option>
+            <option value="thanjavur">Thanjavur</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="to-location"><i class="fas fa-map-marker-alt"></i> To:</label>
+          <select id="to-location" name="to-location" required>
+            <option value="">Select Location</option>
+            <option value="vyttila">Vyttila</option>
+            <option value="kalamassery">Kalamassery</option>
+            <option value="aluva">Aluva</option>
+            <option value="angamaly">Angamaly</option>
+            <option value="chalakudy">Chalakudy</option>
+            <option value="vadakkencherry">Vadakkencherry</option>
+            <option value="malampuzha">Malampuzha</option>
+            <option value="coimbatore">Coimbatore</option>
+            <option value="thanjavur">Thanjavur</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date-picker"><i class="fas fa-calendar-alt"></i> Date:</label>
+          <input type="text" id="date-picker" placeholder="Select Date" required>
+        </div>
+        <button type="submit" class="search-button"><i class="fas fa-search"></i> Search Bus</button>
+      </form>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
@@ -55,16 +94,47 @@
 </body>
 </html>
 
-<style> 
+<style>
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.bus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bus-table th, .bus-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.bus-table th {
+  background-color: #ff6f61;
+  color: #fff;
+}
+
+.bus-table tbody tr:hover {
+  background-color: #f5f5f5;
 }
 
 .search-container {
@@ -72,14 +142,17 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
+  color: #ff6f61;
+}
+
+h1 i {
+  margin-right: 10px;
 }
 
 .form-group {
@@ -90,6 +163,11 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #555;
+}
+
+label i {
+  margin-right: 5px;
 }
 
 select, input[type="text"] {
@@ -103,22 +181,27 @@ select, input[type="text"] {
 .search-button {
   width: 100%;
   padding: 10px;
-  background-color: #ff0000;
+  background-color: #ff6f61;
   color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-  background-color: #cc0000;
+  background-color: #ff4a3d;
+}
+
+.search-button i {
+  margin-right: 5px;
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
-  .search-container {
-    padding: 15px;
+@media (max-width: 768px) {
+  .bus-table th, .bus-table td {
+    padding: 8px;
   }
 
   h1 {
@@ -131,8 +214,6 @@ select, input[type="text"] {
 }
 
 </style>
-
-<script>
 // Initialize Flatpickr for date picker
 flatpickr("#date-picker", {
   dateFormat: "Y-m-d",
@@ -155,4 +236,6 @@ document.getElementById("bus-search-form").addEventListener("submit", function (
   // Redirect to search results page (replace with your URL)
   window.location.href = `search-results.html?from=${fromLocation}&to=${toLocation}&date=${selectedDate}`;
 });
+<script>
+
 </script>
