@@ -312,6 +312,8 @@ window.onload = function() {
       </section>
 
 
+
+
 <div class="curved-box">
   <div class="emoji">🎯</div>
   <h2>Our Mission</h2>
@@ -355,6 +357,61 @@ window.onload = function() {
     }
   }
 </style>
+
+<div class="container">
+    <div class="top-icons">
+        <div class="icon-group">
+            <div class="icon">₹100 OFF</div>
+            <div class="icon green">New</div>
+        </div>
+    </div>
+
+    <h2>Bus Tickets</h2>
+
+    <div class="bus-form">
+        <div class="input-group">
+            <label><strong>From</strong></label>
+            <select id="fromLocation">
+                <option value="Vyttila" selected>Vyttila</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Thrissur">Thrissur</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label><strong>To</strong></label>
+            <select id="toLocation">
+                <option value="Palani" selected>Palani</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+        </div>
+
+        <div class="switch-container">
+            <div>Booking for women</div>
+            <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <button class="search-btn" onclick="redirectToSearch()">
+            <span>🔍</span> Search buses
+        </button>
+    </div>
+
+    
+</div>
+
+<script>
+    function redirectToSearch() {
+        const from = document.getElementById("fromLocation").value;
+        const to = document.getElementById("toLocation").value;
+        window.location.href = `https://zaxx-tour-planners.netlify.app/buslist?from=${from}&to=${to}`;
+    }
+</script>
 
 
       <!-- 
