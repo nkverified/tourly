@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="bus-container">
+        <div class="bus-card">
+            <div class="bus-time">
+                <span class="departure">23:05</span> — <span class="arrival">06:00</span>
+            </div>
+            <div class="bus-info">
+                <h3>IntrCity SmartBus</h3>
+                <p>A/C Seater / Sleeper (2+1)</p>
+                <span class="seats">17 Seats Available</span>
+            </div>
+            <div class="bus-price">
+                <span class="price">₹529</span>
+                <span class="rating">⭐ 4.7 (1061)</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.bus-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.bus-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bus-time {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bus-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #222;
+}
+
+.bus-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.seats {
+    font-size: 14px;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.bus-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.rating {
+    background: #ffd700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+</style>
