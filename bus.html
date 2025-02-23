@@ -1,180 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Booking - Zaxxx Tour Planners</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align card to the top */
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .bus-card {
-            width: 100%;
-            max-width: 400px; /* Smaller width for compact design */
-            background: #0077b6; /* Blue theme */
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            aspect-ratio: 18/6; /* Ratio 18:6 */
-            position: relative;
-            text-decoration: none;
-            color: white; /* White text for contrast */
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            transition: transform 0.3s;
-        }
-
-        .bus-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .bus-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .bus-logo {
-            width: 40px;
-            height: 40px;
-            background: #eee;
-            border-radius: 8px;
-        }
-
-        .bus-info {
-            flex-grow: 1;
-        }
-
-        .bus-info h2 {
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .bus-info p {
-            font-size: 0.9em;
-            margin: 0;
-        }
-
-        .route-info {
-            margin: 10px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .route-info h3 {
-            font-size: 1em;
-            margin: 0;
-        }
-
-        .route-info p {
-            font-size: 0.8em;
-            margin: 0;
-        }
-
-        .details {
-            display: flex;
-            gap: 10px;
-            margin: 10px 0;
-            font-size: 0.8em;
-        }
-
-        .book-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .price {
-            font-size: 1.2em;
-            color: white;
-            margin: 5px 0;
-        }
-
-        .book-now {
-            background: white;
-            color: #0077b6;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .book-now:hover {
-            background: #f0f0f0;
-        }
-
-        @media (max-width: 768px) {
-            .bus-card {
-                grid-template-columns: 1fr;
-                aspect-ratio: unset;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Search</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
 </head>
 <body>
-    <div class="container">
-        <a href="booking.html" class="bus-card">
-            <div class="left-section">
-                <div class="bus-header">
-                    <img src="bus-logo.png" alt="Bus Logo" class="bus-logo">
-                    <div class="bus-info">
-                        <h2>Zaxxx Luxury Line</h2>
-                        <p><i class="fas fa-bus"></i> Bus No: ZX-2024</p>
-                    </div>
-                </div>
-                <div class="route-info">
-                    <div>
-                        <h3><i class="fas fa-map-marker-alt"></i> New York</h3>
-                        <p>08:00 AM</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-map-marker-alt"></i> Boston</h3>
-                        <p>12:00 PM</p>
-                    </div>
-                </div>
-                <div class="details">
-                    <span><i class="fas fa-snowflake"></i> A/C</span>
-                    <span><i class="fas fa-star"></i> 4.8/5</span>
-                    <span><i class="fas fa-chair"></i> 47 Seats</span>
-                </div>
-            </div>
-            <div class="book-section">
-                <div class="price">₹799</div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </a>
-    </div>
+  <div class="search-container">
+    <h1>Bus Search</h1>
+    <form id="bus-search-form">
+      <div class="form-group">
+        <label for="from-location">From:</label>
+        <select id="from-location" name="from-location" required>
+          <option value="">Select Location</option>
+          <option value="vyttila">Vyttila</option>
+          <option value="kalamassery">Kalamassery</option>
+          <option value="aluva">Aluva</option>
+          <option value="angamaly">Angamaly</option>
+          <option value="chalakudy">Chalakudy</option>
+          <option value="vadakkencherry">Vadakkencherry</option>
+          <option value="malampuzha">Malampuzha</option>
+          <option value="coimbatore">Coimbatore</option>
+          <option value="thanjavur">Thanjavur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="to-location">To:</label>
+        <select id="to-location" name="to-location" required>
+          <option value="">Select Location</option>
+          <option value="vyttila">Vyttila</option>
+          <option value="kalamassery">Kalamassery</option>
+          <option value="aluva">Aluva</option>
+          <option value="angamaly">Angamaly</option>
+          <option value="chalakudy">Chalakudy</option>
+          <option value="vadakkencherry">Vadakkencherry</option>
+          <option value="malampuzha">Malampuzha</option>
+          <option value="coimbatore">Coimbatore</option>
+          <option value="thanjavur">Thanjavur</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date-picker">Date:</label>
+        <input type="text" id="date-picker" placeholder="Select Date" required>
+      </div>
+      <button type="submit" class="search-button">Search Bus</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-<style>
-.bus-card {
-    background: white;
-    color: #333; /* Dark text for contrast */
+
+<style> 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-.price {
-    color: #0077b6; /* Blue price text */
+.search-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
-.book-now {
-    background: #0077b6;
-    color: white;
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select, input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .search-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  select, input[type="text"], .search-button {
+    font-size: 14px;
+  }
+}
+
 </style>
+
+<script>
+// Initialize Flatpickr for date picker
+flatpickr("#date-picker", {
+  dateFormat: "Y-m-d",
+  minDate: "today",
+});
+
+// Handle form submission
+document.getElementById("bus-search-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const fromLocation = document.getElementById("from-location").value;
+  const toLocation = document.getElementById("to-location").value;
+  const selectedDate = document.getElementById("date-picker").value;
+
+  if (!fromLocation || !toLocation || !selectedDate) {
+    alert("Please fill all fields.");
+    return;
+  }
+
+  // Redirect to search results page (replace with your URL)
+  window.location.href = `search-results.html?from=${fromLocation}&to=${toLocation}&date=${selectedDate}`;
+});
+</script>
