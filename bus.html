@@ -7,32 +7,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Bus Tickets</h2>
-        <div class="form-group">
-            <label for="from">From</label>
-            <input type="text" id="from" value="Hyderabad" readonly>
-        </div>
-        <div class="form-group">
-            <label for="to">To</label>
-            <input type="text" id="to" value="Vijayawada" readonly>
-        </div>
-        <div class="form-group">
-            <label for="date">Date of Journey</label>
-            <input type="date" id="date" value="2025-02-23">
-        </div>
-        <div class="form-group toggle-container">
-            <label for="women-booking">Booking for women</label>
-            <input type="checkbox" id="women-booking">
-        </div>
-        <button id="search-btn">Search Buses</button>
+
+<div class="container">
+    <h2>Bus Tickets</h2>
+    
+    <div class="form-group">
+        <label>From</label>
+        <select id="from-location">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Chennai">Chennai</option>
+        </select>
     </div>
 
-    <script src="script.js"></script>
+    <div class="form-group">
+        <label>To</label>
+        <select id="to-location">
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Bangalore">Bangalore</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Date of Journey</label>
+        <input type="date" id="journey-date">
+    </div>
+
+    <button class="search-btn">Search Buses</button>
+</div>
+
 </body>
 </html>
 
-<style> 
+<style>
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -47,27 +57,24 @@ body {
 .container {
     background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
     max-width: 400px;
-}
-
-h2 {
     text-align: center;
 }
 
 .form-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-input[type="text"], input[type="date"] {
+select, input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -75,43 +82,45 @@ input[type="text"], input[type="date"] {
     font-size: 16px;
 }
 
-.toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-button {
+.search-btn {
     width: 100%;
     padding: 10px;
-    background: red;
+    background-color: #d32f2f;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background: darkred;
+.search-btn:hover {
+    background-color: #b71c1c;
 }
 
 @media (max-width: 600px) {
     .container {
-        width: 100%;
-        margin: 10px;
+        width: 90%;
     }
 }
-</style>
 
-<script> 
-document.getElementById("search-btn").addEventListener("click", function() {
-    let from = document.getElementById("from").value;
-    let to = document.getElementById("to").value;
-    let date = document.getElementById("date").value;
-    let womenBooking = document.getElementById("women-booking").checked;
+<script>
 
-    let queryParams = `?from=${from}&to=${to}&date=${date}&womenBooking=${womenBooking}`;
-    window.location.href = "results.html" + queryParams;
+const fromLocations = ["Hyderabad", "Kochi", "Coimbatore", "Chennai"];
+const toLocations = ["Vijayawada", "Kochi", "Coimbatore", "Bangalore"];
+
+function populateDropdown(id, locations) {
+    const dropdown = document.getElementById(id);
+    dropdown.innerHTML = "";
+    locations.forEach(location => {
+        const option = document.createElement("option");
+        option.value = location;
+        option.textContent = location;
+        dropdown.appendChild(option);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    populateDropdown("from-location", fromLocations);
+    populateDropdown("to-location", toLocations);
 });
 </script>
