@@ -3,113 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus List</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bus Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .route {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .date {
+            background: #f0e0e0;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .filter-btn {
+            padding: 5px 10px;
+            border: none;
+            background: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .bus-list {
+            margin-bottom: 10px;
+        }
+
+        .bus-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .bus-card:hover {
+            background: #f9f9f9;
+        }
+
+        .bus-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .bus-time {
+            font-size: 14px;
+            color: gray;
+            margin: 5px 0;
+        }
+
+        .bus-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bus-name {
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .rating {
+            background: #ffcc00;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .rating.green {
+            background: #28a745;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="bus-container">
-        <!-- Bus 1 -->
+    <div class="container">
+        <div class="header">
+            <div class="route">Vyttila → Palani</div>
+            <div class="date">1 Mar</div>
+        </div>
 
-<h2> Bus list </h2>
-     <a href="https://form.jotform.com/250532235807049" class="bus-card">
-<style> a {
-  text-decoration: none;
-} </style>
+        <div class="filters">
+            <button class="filter-btn">Filters</button>
+            <button class="filter-btn">Sort</button>
+            <button class="filter-btn">Free Cancellation</button>
+        </div>
 
-        <div class="bus-card">
-            <div class="bus-time">
-                <span class="departure">23:05</span> — <span class="arrival">06:00</span>
+        <div class="bus-list">
+            <div class="bus-card" onclick="redirectToBooking()">
+                <div class="bus-header">
+                    <div>19:55 - 01:20</div>
+                    <div class="price">₹809</div>
+                </div>
+                <div class="bus-time">5h 25m • 45 Seats (11 Single)</div>
+                <div class="bus-info">
+                    <div class="bus-name">VEE VEE BUS</div>
+                    <div class="rating">3.6</div>
+                </div>
+                <div>A/C Seater / Sleeper (2+1)</div>
             </div>
-            <div class="bus-info">
-                <h3> Vyttila - Thanjavur</h3>
-                <p>A/C Seater / Sleeper (2+1)</p>
-                <span class="seats">Date : Saturday,1  March</span>
-            </div>
-            <div class="bus-price">
-                <span class="price">₹529</span>
-                <span class="rating">⭐ 4.7 (1061)</span>
-</a>
+
+            <div class="bus-card" onclick="redirectToBooking()">
+                <div class="bus-header">
+                    <div>21:30 - 03:30</div>
+                    <div class="price">₹799</div>
+                </div>
+                <div class="bus-time">6h 00m • 26 Seats (8 Single)</div>
+                <div class="bus-info">
+                    <div class="bus-name">MLT Travels</div>
+                    <div class="rating green">4.0</div>
+                </div>
+                <div>A/C Sleeper (2+1)</div>
             </div>
         </div>
 
-       
+        <div style="text-align: center; font-size: 14px; color: gray;">End of the list</div>
+    </div>
+
+    <script>
+        function redirectToBooking() {
+            window.location.href = "https://form.jotform.com/250532235807049";
+        }
+    </script>
 
 </body>
 </html>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.bus-container {
-    width: 100%;
-    max-width: 500px;
-}
-
-.bus-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.bus-time {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.bus-info h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-    color: #222;
-}
-
-.bus-info p {
-    font-size: 14px;
-    color: #666;
-}
-
-.seats {
-    font-size: 14px;
-    color: #d9534f;
-    font-weight: bold;
-}
-
-.bus-price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #28a745;
-}
-
-.rating {
-    background: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-}
-</style>
-
-<script>
-function redirectToDetails() {
-    window.location.href = "bus-details.html"; // Redirect to details page
-}
-</script>
