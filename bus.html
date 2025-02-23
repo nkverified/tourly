@@ -214,6 +214,8 @@ select, input[type="text"] {
 }
 
 </style>
+
+<script>
 // Initialize Flatpickr for date picker
 flatpickr("#date-picker", {
   dateFormat: "Y-m-d",
@@ -236,6 +238,6 @@ document.getElementById("bus-search-form").addEventListener("submit", function (
   // Redirect to search results page (replace with your URL)
   window.location.href = `search-results.html?from=${fromLocation}&to=${toLocation}&date=${selectedDate}`;
 });
-<script>
+
 
 </script>
